@@ -16,15 +16,15 @@ export default defineConfig({
         theme_color: "#2563eb",
         background_color: "#ffffff",
         display: "standalone",
-        start_url: "/attendanceTracker",
+        start_url: ".",
         icons: [
           {
-            src: "/attendanceTracker/pwa-192x192.png",
+            src: "pwa-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "/attendanceTracker/pwa-512x512.png",
+            src: "pwa-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },
