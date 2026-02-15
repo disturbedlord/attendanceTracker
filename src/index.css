@@ -1,13 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: #f3f4f6;
+  background: #f8fafc;
 }
 
 .app-container {
   max-width: 480px;
-  margin: auto;
-  padding: 16px;
+  /* margin: auto; */
+  padding-left :15px ;
+  padding-right: 15px;
 }
 
 .card {
@@ -27,4 +32,12 @@ button {
   color: white;
   font-weight: 600;
   cursor: pointer;
+}
+
+.avi_title {
+  @apply text-lg font-semibold mb-2 underline
+}
+
+.avi_card {
+  @apply bg-white shadow-sm p-2 rounded font-semibold z-50 border border-gray-200
 }

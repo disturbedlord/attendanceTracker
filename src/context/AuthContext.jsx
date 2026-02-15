@@ -9,12 +9,21 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
 
+  const login = () => {
+    setLoggedIn(true);
+  };
+
+  const logout = () => {
+    setLoggedIn(false);
+  };
   useEffect(() => {
+    console.warn("AuthCOntext UseEffect Called");
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         setCurrentUser(user);
-
+        console.log("USER : ", user);
         const docRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(docRef);
 
@@ -28,12 +37,14 @@ export function AuthProvider({ children }) {
 
       setLoading(false);
     });
-
+    console.log(currentUser, userData);
     return unsubscribe;
   }, []);
 
   return (
-    <AuthContext.Provider value={{ currentUser, userData }}>
+    <AuthContext.Provider
+      value={{ currentUser, userData, login, logout, loggedIn }}
+    >
       {!loading && children}
     </AuthContext.Provider>
   );
