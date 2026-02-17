@@ -8,10 +8,11 @@ import DashboardRedirect from "./pages/DashboardRedirect";
 import TeacherDashboard from "./pages/TeacherDashboard";
 import ClassDetails from "./pages/ClassDetails";
 import AppLayout from "./components/layout/AppLayout";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Login />} />
@@ -39,6 +40,14 @@ function App() {
             element={
               <ProtectedRoute allowedRoles={["teacher"]}>
                 <ClassDetails />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <AdminDashboard />
               </ProtectedRoute>
             }
           />

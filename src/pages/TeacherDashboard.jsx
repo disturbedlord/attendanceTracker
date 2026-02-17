@@ -72,7 +72,7 @@ function TeacherDashboard() {
           >
             {/* <div className="sticky top-0 z-50 bg-white border-b border-gray-200 px-4 py-3 flex justify-between items-center"> */}
 
-            <div className="bg-white shadow-sm p-2 rounded font-semibold z-50 border border-gray-200">
+            <div className=" shadow-sm p-2 rounded font-semibold z-50 border border-gray-200">
               {c.name}
             </div>
           </li>

@@ -7,7 +7,7 @@ export default function AppLayout() {
     <div className="flex flex-col min-h-screen bg-gray-50">
       <Navbar />
 
-      <main className="flex-1 overflow-y-auto px-4">
+      <main className="flex-1 px-4">
         <Outlet />
       </main>
 

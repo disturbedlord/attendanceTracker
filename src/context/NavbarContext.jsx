@@ -13,6 +13,8 @@ const routeTitles = [
     title: "Teacher Dashboard",
   },
   { path: "/teacher/class/:classId", title: "Class Details" },
+  { path: "/accept-invite/", title: "Invitation" },
+  { path: "/admin/", title: "Admin Dashboard" },
 ];
 
 export function NavbarProvider({ children }) {
